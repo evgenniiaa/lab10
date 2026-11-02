@@ -9,7 +9,7 @@ double area_triangle(double R) {
 
 double get_radius(void) {
     double r;
-    printf("Введите радиус описанной окружности R: ");
+    printf("Р’РІРµРґРёС‚Рµ СЂР°РґРёСѓСЃ РѕРїРёСЃР°РЅРЅРѕР№ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё R: ");
     scanf("%lf", &r);
     return r;
 }
@@ -18,7 +18,7 @@ void draw_triangle(int R, char symbol) {
     int height = R * 2;
     if (height < 2) height = 2;
 
-    printf("\nРисунок фигуры:\n");
+    printf("\nР РёСЃСѓРЅРѕРє С„РёРіСѓСЂС‹:\n");
     for (int i = 1; i <= height; i++) {
         for (int j = 1; j <= i; j++) {
             if (j == 1 || j == i || i == height) {
@@ -43,13 +43,13 @@ void zadanie3(void) {
     int has_figure = 0;
 
     do {
-        printf("\n--- Меню (Задание 3) ---\n");
-        printf("1 - Рассчитать площадь\n");
-        printf("2 - Вывести определение фигуры (радиус)\n");
-        printf("3 - Нарисовать фигуру\n");
-        printf("4 - Сравнить две фигуры по площади\n");
-        printf("0 - Выход\n");
-        printf("Ваш выбор: ");
+        printf("\n--- РњРµРЅСЋ (Р—Р°РґР°РЅРёРµ 3) ---\n");
+        printf("1 - Р Р°СЃСЃС‡РёС‚Р°С‚СЊ РїР»РѕС‰Р°РґСЊ\n");
+        printf("2 - Р’С‹РІРµСЃС‚Рё РѕРїСЂРµРґРµР»РµРЅРёРµ С„РёРіСѓСЂС‹ (СЂР°РґРёСѓСЃ)\n");
+        printf("3 - РќР°СЂРёСЃРѕРІР°С‚СЊ С„РёРіСѓСЂСѓ\n");
+        printf("4 - РЎСЂР°РІРЅРёС‚СЊ РґРІРµ С„РёРіСѓСЂС‹ РїРѕ РїР»РѕС‰Р°РґРё\n");
+        printf("0 - Р’С‹С…РѕРґ\n");
+        printf("Р’Р°С€ РІС‹Р±РѕСЂ: ");
         scanf("%d", &choice);
 
         switch (choice) {
@@ -58,17 +58,17 @@ void zadanie3(void) {
                 R = get_radius();
                 has_figure = 1;
             }
-            printf("Площадь треугольника: %.2lf\n", area_triangle(R));
+            printf("РџР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°: %.2lf\n", area_triangle(R));
             break;
         case 2:
             if (!has_figure) {
                 R = get_radius();
                 has_figure = 1;
             }
-            printf("Определение фигуры:\n");
-            printf("Прямоугольный треугольник, вписанный в окружность.\n");
-            printf("Радиус описанной окружности R = %.2lf\n", R);
-            printf("Гипотенуза (диаметр) c = %.2lf\n", 2 * R);
+            printf("РћРїСЂРµРґРµР»РµРЅРёРµ С„РёРіСѓСЂС‹:\n");
+            printf("РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє, РІРїРёСЃР°РЅРЅС‹Р№ РІ РѕРєСЂСѓР¶РЅРѕСЃС‚СЊ.\n");
+            printf("Р Р°РґРёСѓСЃ РѕРїРёСЃР°РЅРЅРѕР№ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё R = %.2lf\n", R);
+            printf("Р“РёРїРѕС‚РµРЅСѓР·Р° (РґРёР°РјРµС‚СЂ) c = %.2lf\n", 2 * R);
             break;
         case 3:
             if (!has_figure) {
@@ -82,24 +82,24 @@ void zadanie3(void) {
                 R = get_radius();
                 has_figure = 1;
             }
-            printf("Введите радиус R2 для второй фигуры: ");
+            printf("Р’РІРµРґРёС‚Рµ СЂР°РґРёСѓСЃ R2 РґР»СЏ РІС‚РѕСЂРѕР№ С„РёРіСѓСЂС‹: ");
             scanf("%lf", &R2);
             double diff = compare_triangle(R, R2);
-            if (diff > 0) printf("Первая фигура больше второй на %.2lf\n", diff);
-            else if (diff < 0) printf("Вторая фигура больше первой на %.2lf\n", -diff);
-            else printf("Площади фигур равны.\n");
+            if (diff > 0) printf("РџРµСЂРІР°СЏ С„РёРіСѓСЂР° Р±РѕР»СЊС€Рµ РІС‚РѕСЂРѕР№ РЅР° %.2lf\n", diff);
+            else if (diff < 0) printf("Р’С‚РѕСЂР°СЏ С„РёРіСѓСЂР° Р±РѕР»СЊС€Рµ РїРµСЂРІРѕР№ РЅР° %.2lf\n", -diff);
+            else printf("РџР»РѕС‰Р°РґРё С„РёРіСѓСЂ СЂР°РІРЅС‹.\n");
             break;
         case 0:
-            printf("Выход из задания 3.\n");
+            printf("Р’С‹С…РѕРґ РёР· Р·Р°РґР°РЅРёСЏ 3.\n");
             break;
         default:
-            printf("Неверный выбор.\n");
+            printf("РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ.\n");
         }
     } while (choice != 0);
 }
 
 int main(void) {
-    setlocale(LC_ALL, ".UTF-8");
+    setlocale(LC_ALL, "RUS");
     zadanie3();
     return 0;
 }
