@@ -19,19 +19,19 @@ double fb(double x) {
 }
 
 void zadanie1(void) {
-    printf("\n Задание 1\n");
+    printf("\n Р—Р°РґР°РЅРёРµ 1\n");
     double x, val_a, val_b;
     int choice;
 
     do {
-        printf("\n1 - fa(x) и fb(x)\n");
-        printf("2 - произведение, разность квадратов, удвоенная сумма\n");
-        printf("0 - Назад\n");
-        printf("Ваш выбор: ");
+        printf("\n1 - fa(x) Рё fb(x)\n");
+        printf("2 - РїСЂРѕРёР·РІРµРґРµРЅРёРµ, СЂР°Р·РЅРѕСЃС‚СЊ РєРІР°РґСЂР°С‚РѕРІ, СѓРґРІРѕРµРЅРЅР°СЏ СЃСѓРјРјР°\n");
+        printf("0 - РќР°Р·Р°Рґ\n");
+        printf("Р’Р°С€ РІС‹Р±РѕСЂ: ");
         scanf("%d", &choice);
 
         if (choice == 1 || choice == 2) {
-            printf("Введите x: ");
+            printf("Р’РІРµРґРёС‚Рµ x: ");
             scanf("%lf", &x);
             val_a = fa(x);
             val_b = fb(x);
@@ -41,9 +41,9 @@ void zadanie1(void) {
             printf("fa(x) = %lf, fb(x) = %lf\n", val_a, val_b);
         }
         else if (choice == 2) {
-            printf("Произведение: %lf\n", val_a * val_b);
-            printf("Разность квадратов: %lf\n", val_a * val_a - val_b * val_b);
-            printf("Удвоенная сумма: %lf\n", 2 * (val_a + val_b));
+            printf("РџСЂРѕРёР·РІРµРґРµРЅРёРµ: %lf\n", val_a * val_b);
+            printf("Р Р°Р·РЅРѕСЃС‚СЊ РєРІР°РґСЂР°С‚РѕРІ: %lf\n", val_a * val_a - val_b * val_b);
+            printf("РЈРґРІРѕРµРЅРЅР°СЏ СЃСѓРјРјР°: %lf\n", 2 * (val_a + val_b));
         }
     } while (choice != 0);
 }
@@ -78,30 +78,30 @@ double sin_x_div_x_eps(double x, double eps) {
 }
 
 void zadanie2(void) {
-    printf("\n Задание 2\n");
+    printf("\n Р—Р°РґР°РЅРёРµ 2\n");
     double x, eps, res_std, res_n, res_eps;
     int N;
 
-    printf("Введите x: ");
+    printf("Р’РІРµРґРёС‚Рµ x: ");
     scanf("%lf", &x);
-    printf("Введите N: ");
+    printf("Р’РІРµРґРёС‚Рµ N: ");
     scanf("%d", &N);
-    printf("Введите eps: ");
+    printf("Р’РІРµРґРёС‚Рµ eps: ");
     scanf("%lf", &eps);
 
     res_std = sin_x_div_x_standard(x);
     res_n = sin_x_div_x_n(x, N);
     res_eps = sin_x_div_x_eps(x, eps);
 
-    printf("Стандартная: %lf\n", res_std);
-    printf("Ряд (N): %lf\n", res_n);
-    printf("Ряд (eps): %lf\n", res_eps);
-    printf("Отклонение (N): %lf\n", fabs(res_std - res_n));
-    printf("Отклонение (eps): %lf\n", fabs(res_std - res_eps));
+    printf("РЎС‚Р°РЅРґР°СЂС‚РЅР°СЏ: %lf\n", res_std);
+    printf("Р СЏРґ (N): %lf\n", res_n);
+    printf("Р СЏРґ (eps): %lf\n", res_eps);
+    printf("РћС‚РєР»РѕРЅРµРЅРёРµ (N): %lf\n", fabs(res_std - res_n));
+    printf("РћС‚РєР»РѕРЅРµРЅРёРµ (eps): %lf\n", fabs(res_std - res_eps));
 }
 
 int main(void) {
-    setlocale(LC_ALL, ".UTF-8");
+    setlocale(LC_ALL, "RUS");
     zadanie1();
     zadanie2();
     return 0;
